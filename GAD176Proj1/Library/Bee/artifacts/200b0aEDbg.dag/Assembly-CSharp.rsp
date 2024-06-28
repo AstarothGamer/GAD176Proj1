@@ -353,6 +353,7 @@
 "Assets/Scripts/Enemy.cs"
 "Assets/Scripts/FollowAI.cs"
 "Assets/Scripts/Player.cs"
+"Assets/Scripts/Turret.cs"
 -langversion:9.0
 
 /deterministic

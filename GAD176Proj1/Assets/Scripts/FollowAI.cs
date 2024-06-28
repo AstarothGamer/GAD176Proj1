@@ -9,13 +9,18 @@ public class FollowAI : MonoBehaviour
     [SerializeField] private float rotationSpeed;
 
 
-    // Start is called before the first frame update
+    //Set settings of different enemies
+    public virtual void EnemySettings()
+    {
+        
+    }
+
+    //Find player's position
     void Start()
     {
         target = FindObjectOfType<Player>().transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
         var dir = target.position - transform.position;
@@ -23,5 +28,17 @@ public class FollowAI : MonoBehaviour
         transform.up = Vector3.MoveTowards(transform.up, dir, rotationSpeed * Time.deltaTime);
 
         transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.up, moveSpeed * Time.deltaTime);
+
+        ContactAction();
+    }
+
+
+    //action when enemy near enough to player
+    public virtual void ContactAction()
+    {
+        if (Vector3.Distance(transform.position, target.position) <= 3)
+        {
+            Destroy(gameObject);
+        }
     }
 }
