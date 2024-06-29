@@ -15,7 +15,7 @@ public class FollowAI : MonoBehaviour
         
     }
 
-    //Find player's position
+    //Find player in the start of game 
     void Start()
     {
         target = FindObjectOfType<Player>().transform;
@@ -31,7 +31,6 @@ public class FollowAI : MonoBehaviour
 
         ContactAction();
     }
-
 
     //action when enemy near enough to player
     public virtual void ContactAction()

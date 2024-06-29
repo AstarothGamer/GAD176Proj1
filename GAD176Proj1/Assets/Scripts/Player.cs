@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int health = 100;
     [SerializeField] private float speed = 1;
 
     // Start is called before the first frame update
@@ -12,7 +13,7 @@ public class Player : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    // basic movement for tank
     void Update()
     {
         var dir = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
