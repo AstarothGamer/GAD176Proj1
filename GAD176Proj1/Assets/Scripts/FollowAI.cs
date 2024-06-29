@@ -5,9 +5,8 @@ using UnityEngine;
 public class FollowAI : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float rotationSpeed;
-
+    [SerializeField] public float moveSpeed;
+    [SerializeField] public float rotationSpeed;
 
     //Set settings of different enemies
     public virtual void EnemySettings()
@@ -15,9 +14,17 @@ public class FollowAI : MonoBehaviour
         
     }
 
-    //Find player in the start of game 
+    //action when enemy near enough to player
+    public virtual void ContactAction()
+    {
+        Destroy(gameObject);
+    }
+
+    //Find player in the start of game
+    #region Unity Specific Functions
     void Start()
     {
+        EnemySettings();
         target = FindObjectOfType<Player>().transform;
     }
 
@@ -29,15 +36,12 @@ public class FollowAI : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, transform.position + transform.up, moveSpeed * Time.deltaTime);
 
-        ContactAction();
-    }
-
-    //action when enemy near enough to player
-    public virtual void ContactAction()
-    {
         if (Vector3.Distance(transform.position, target.position) <= 3)
         {
-            Destroy(gameObject);
+            ContactAction();
+
         }
     }
+    #endregion
+
 }

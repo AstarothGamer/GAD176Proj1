@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int health = 100;
+    [SerializeField] public int health = 100;
     [SerializeField] private float speed = 1;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+    #region Unity Specific Functions
     // basic movement for tank
     void Update()
     {
@@ -20,4 +16,5 @@ public class Player : MonoBehaviour
 
         transform.Translate(dir * speed * Time.deltaTime);
     }
+    #endregion
 }

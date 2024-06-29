@@ -5,7 +5,7 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     private Camera cam;
-    [SerializeField] private float rotatinSpeed;
+    [SerializeField] private float rotationSpeed;
 
 
 
@@ -20,6 +20,8 @@ public class Turret : MonoBehaviour
         var mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
         mousePosition.z = 0;
 
-        transform.up = Vector3.MoveTowards(transform.up, mousePosition, rotatinSpeed * Time.deltaTime); ;
+        var dir = mousePosition - transform.position;
+        transform.up = Vector3.MoveTowards(transform.up, dir, rotationSpeed * Time.deltaTime);
+
     }
 }

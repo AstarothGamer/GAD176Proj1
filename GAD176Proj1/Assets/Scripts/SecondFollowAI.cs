@@ -8,7 +8,6 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotationSpeed;
     [SerializeField] private Vector3 normalized;
-    //[SerializeField] private Vector3 final;
 
     float x;
     float y;
@@ -23,10 +22,7 @@ public class NewBehaviourScript : MonoBehaviour
     //action when enemy near enough to player
     public virtual void ContactAction()
     {
-        if (Vector3.Distance(transform.position, target.position) <= 3)
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 
 
@@ -40,21 +36,23 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //final = transform.position;
-
         //Normalization of vector
         normalized.x = target.position.x - transform.position.x;
         normalized.y = target.position.y - transform.position.y;
+        //For 3D games use line below
         // normalized.z = target.position.z - transform.position.z;
 
         x = normalized.x * normalized.x;
         y = normalized.y * normalized.y;
+        //For 3D games use line below
         // normalized.z = normalized.z * normalized.z;
 
         m = Mathf.Sqrt(x + y);
 
         normalized.x = normalized.x / m;
         normalized.y = normalized.y / m;
+        //For 3D games use line below
+        //normalized.z = normalized.z / m;
 
         //Moving to player
         transform.position += normalized * moveSpeed * Time.deltaTime;
