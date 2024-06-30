@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2220484256001357513}
   - component: {fileID: 2469388239408291487}
   - component: {fileID: 3263864076958748875}
-  - component: {fileID: 6682106720734851078}
   m_Layer: 0
   m_Name: Octopus
   m_TagString: Untagged
@@ -102,18 +101,3 @@ MonoBehaviour:
   moveSpeed: 0
   rotationSpeed: 0
   explodePrefab: {fileID: 2343562561196245607, guid: f63e5f785dfbf49b9976eced834a1d7a, type: 3}
---- !u!114 &6682106720734851078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4615561800625762747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 721ddf2cf83bb4c409e55888418307db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  moveSpeed: 0
-  rotationSpeed: 0
