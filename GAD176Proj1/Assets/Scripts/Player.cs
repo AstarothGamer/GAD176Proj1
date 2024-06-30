@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     //[SerializeField] public int health = 100;
-    [SerializeField] private float speed = 1;
+    [SerializeField] public float speed = 1;
 
 
     #region Unity Specific Functions
