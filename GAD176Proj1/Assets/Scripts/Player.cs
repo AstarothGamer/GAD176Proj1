@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] public int health = 100;
+    //[SerializeField] public int health = 100;
     [SerializeField] private float speed = 1;
 
 

@@ -6,12 +6,14 @@ public class Octopus : FollowAI
 {
     [SerializeField] private GameObject explodePrefab;
 
+    //Set settings for the enemy
     public override void EnemySettings()
     {
         moveSpeed = 4f;
         rotationSpeed = 6f;
     }
 
+    //Specific actions for the enemy
     public override void ContactAction()
     {
         Instantiate(explodePrefab, transform.position, Quaternion.Euler(90,0,0));

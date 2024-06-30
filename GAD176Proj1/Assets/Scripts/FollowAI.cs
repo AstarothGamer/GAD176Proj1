@@ -5,18 +5,19 @@ using UnityEngine;
 public class FollowAI : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] public float moveSpeed;
-    [SerializeField] public float rotationSpeed;
+    [SerializeField] protected float moveSpeed;
+    [SerializeField] protected float rotationSpeed;
 
     //Set settings of different enemies
     public virtual void EnemySettings()
     {
-        
+        //Custom settings for enemies
     }
 
     //action when enemy near enough to player
     public virtual void ContactAction()
     {
+        //custom actions for enemies
         Destroy(gameObject);
     }
 
@@ -28,6 +29,7 @@ public class FollowAI : MonoBehaviour
         target = FindObjectOfType<Player>().transform;
     }
 
+    //Move to player 
     void Update()
     {
         var dir = target.position - transform.position;

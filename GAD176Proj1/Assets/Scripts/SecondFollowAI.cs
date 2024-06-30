@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class SecondFollowAI : MonoBehaviour
 {
     [SerializeField] private Transform target;
     [SerializeField] private float moveSpeed;
@@ -14,26 +14,26 @@ public class NewBehaviourScript : MonoBehaviour
     float m;
 
     //Set settings of different enemies
-    public virtual void EnemySettings()
+    protected virtual void EnemySettings()
     {
 
     }
 
     //action when enemy near enough to player
-    public virtual void ContactAction()
+    protected virtual void ContactAction()
     {
         Destroy(gameObject);
     }
 
-
-    // Start is called before the first frame update
+    #region Unity Specific Functions
+    // Getting player's position
     void Start()
     {
         target = FindObjectOfType<Player>().transform;
 
     }
 
-    // Update is called once per frame
+    //Math for vectors + moving to player + rotation 
     void Update()
     {
         //Normalization of vector
@@ -65,7 +65,6 @@ public class NewBehaviourScript : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
 
         ContactAction();
-
     }
-
+    #endregion
 }
