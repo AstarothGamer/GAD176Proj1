@@ -13,18 +13,20 @@ public class Octopus : FollowAI
         rotationSpeed = 6f;
     }
 
-    private void Start()
+    //Specific actions for the enemy
+    public override void ContactAction()
     {
+        Instantiate(explodePrefab, transform.position, Quaternion.Euler(90, 0, 0));
+        Destroy(gameObject);
+    }
+
+    void Start()
+    {
+        EnemySettings();
+
         if (explodePrefab == null)
         {
             Debug.LogError("explodePfefab is null! Please ensure it is assigned in the Inspector or instantiated correctly.");
         }
-    }
-
-    //Specific actions for the enemy
-    public override void ContactAction()
-    {
-        Instantiate(explodePrefab, transform.position, Quaternion.Euler(90,0,0));
-        Destroy(gameObject);
     }
 }

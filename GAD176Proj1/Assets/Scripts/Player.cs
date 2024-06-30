@@ -7,14 +7,18 @@ public class Player : MonoBehaviour
     //[SerializeField] public int health = 100;
     [SerializeField] public float speed = 1;
 
-
-    #region Unity Specific Functions
     // basic movement for tank
-    void Update()
+    private void Movement()
     {
         var dir = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
 
         transform.Translate(dir * speed * Time.deltaTime);
+    }
+
+    #region Unity Specific Functions
+    void Update()
+    {
+        Movement();
     }
     #endregion
 }

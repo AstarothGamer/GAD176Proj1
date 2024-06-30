@@ -21,17 +21,26 @@ public class FollowAI : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //Find player in the start of game
     #region Unity Specific Functions
+    //Find player in the start of game
     void Start()
     {
         EnemySettings();
-        target = FindObjectOfType<Player>().transform;
+
+        if (target == null)
+        {
+            target = FindObjectOfType<Player>().transform;
+        }
     }
 
     //Move to player 
     void Update()
     {
+        if (target == null)
+        {
+            target = FindObjectOfType<Player>().transform;
+        }
+
         var dir = target.position - transform.position;
 
         transform.up = Vector3.MoveTowards(transform.up, dir, rotationSpeed * Time.deltaTime);

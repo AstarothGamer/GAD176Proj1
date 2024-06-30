@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea8128539f3354b86841615a823756a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 5170567367430284271, guid: 4ba581bf5b25e4ea99736c7aedaef7f5, type: 3}
   moveSpeed: 0
   rotationSpeed: 0
   explodePrefab: {fileID: 2343562561196245607, guid: f63e5f785dfbf49b9976eced834a1d7a, type: 3}

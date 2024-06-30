@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float timeToSpawn;
     [SerializeField] private GameObject octopusPrefab;
 
-    private void Start()
+    void Start()
     {
         if (octopusPrefab == null)
         {
