@@ -8,6 +8,14 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float timeToSpawn;
     [SerializeField] private GameObject octopusPrefab;
 
+    private void Start()
+    {
+        if (octopusPrefab == null)
+        {
+            Debug.LogError("octopusPrefab is null! Please ensure it is assigned in the Inspector or instantiated correctly.");
+        }
+    }
+
     //Random spawner 
     void Update()
     {

@@ -13,6 +13,14 @@ public class Octopus : FollowAI
         rotationSpeed = 6f;
     }
 
+    private void Start()
+    {
+        if (explodePrefab == null)
+        {
+            Debug.LogError("explodePfefab is null! Please ensure it is assigned in the Inspector or instantiated correctly.");
+        }
+    }
+
     //Specific actions for the enemy
     public override void ContactAction()
     {
