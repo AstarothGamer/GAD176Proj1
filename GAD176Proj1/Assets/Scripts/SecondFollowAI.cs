@@ -5,8 +5,8 @@ using UnityEngine;
 public class SecondFollowAI : MonoBehaviour
 {
     [SerializeField] private Transform target;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float rotationSpeed;
+    [SerializeField] protected float moveSpeed;
+    [SerializeField] protected float rotationSpeed;
     [SerializeField] private Vector3 normalized;
 
     float x;
